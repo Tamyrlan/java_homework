@@ -27,11 +27,18 @@ public class task1_new {
     double a = Double.parseDouble(a1[1]);
     double b = Double.parseDouble(b1[1]);
     double sum = power_modul(a, b);
+    if(sum==0){
+        System.out.println("Не определено");
+        FileWriter fw = new FileWriter("output.txt",false);
+        fw.write("Не определено");
+        fw.flush();
+    }else{
     System.out.println(a+"^"+" "+b+" = "+sum);
     FileWriter fw = new FileWriter("output.txt",false);
-            fw.write("Result:"+sum);
-            fw.flush();
-            System.out.println("Succesfully wrote to the file");
+    fw.write("Result:"+sum);
+    fw.flush();
+    System.out.println("Succesfully wrote to the file");
+    }
  }
  static double power_modul(double a,double b){
     double power=1;
@@ -40,13 +47,15 @@ public class task1_new {
             power*=a;
         }
     return power;
+    }else if(a==0 && b==0){
+        System.out.println("Не определено");
+        return 0;
     }else{
         for (int i = 0; i > b; i--) {
             power*=a;
         }
         power = 1/power;
     }
-
     return power;
 }
 }
