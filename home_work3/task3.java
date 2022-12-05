@@ -2,18 +2,18 @@ package home_work3;
 
 import java.util.Scanner;
 
-public class task3 {
-    public static void main(String[] args) {
+public class task3 { 
+    public static void main(String[] args) { 
         getArg();
     }
 
-    public static int getNumber(String Number) {
+    public static int getNumber(String Number) { // method to get numbers from user
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter int " + Number + ":");
         int a = sc.nextInt();
         return a;
     }
-    public static void getArg(){
+    public static void getArg(){  // Turn each number to arguments to use in code 
         int a = getNumber("a");
         int b = getNumber("b");
         System.out.println("Enter number for k1 command and k2 command");
@@ -24,7 +24,8 @@ public class task3 {
         exception(a, b, c, d);
     }
 
-    public static long[] steps(int a, int b, int c, int d) {
+    public static long[] steps(int a, int b, int c, int d) { // Creating a long array where we will 
+                                                            //write down possible ways  
         long[] arr = new long[b + 1];
         arr[a] = 1;
         for (int i = 0; i <= b; i++) {
@@ -38,7 +39,7 @@ public class task3 {
         return arr;
     }
 
-    public static void exception(int a ,int b, int c, int d){
+    public static void exception(int a ,int b, int c, int d){ // checking wether user input is correct
         if(a > b){
             System.out.println("Wrong number of arguments, a can not be greater than b, please enter correct numbers!");
         } else{
@@ -47,7 +48,7 @@ public class task3 {
             System.out.printf("ways to turn %d to %d => %d",a,b,result);
             getMinPath(result, a, b, c, d);
         }
-    }public static void getMinPath(long res,int a, int b ,int c, int d){
+    }public static void getMinPath(long res,int a, int b ,int c, int d){ // calculating minimum path
         String str = "";
         System.out.println("\n Min path:");
         if(res == 0){
