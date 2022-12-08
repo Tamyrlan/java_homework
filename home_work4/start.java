@@ -1,6 +1,6 @@
 package home_work4;
 // 
-public class programm{
+public class start{
     public static void main(String[] args){
         controller.run();
     }
