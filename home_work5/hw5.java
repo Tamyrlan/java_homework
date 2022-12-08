@@ -6,10 +6,9 @@ public class hw5 {
         System.out.println("Введите число:");
         int num = sc.nextInt();
         sc.close();
-        // createTriangle(num);
-        int n = createTriangle(num);
+        createTriangle(num);
         System.out.println();
-        drawTriangle(n);
+        drawTriangle(num);
     }
     public static int createTriangle(int num){
         int tr = 0;
@@ -23,7 +22,7 @@ public class hw5 {
     }
     private static void drawTriangle(int n){
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
         System.out.println();
